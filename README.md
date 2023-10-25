@@ -7,7 +7,7 @@ EconomyX is a feature-rich PocketMine plugin that introduces a robust in-game cu
 - EconomyX provides a user-friendly API for effortless integration with other plugins, allowing them to leverage the currency system's capabilities smoothly and efficiently.
 
 ## Installation :pencil:
-1. Download the latest plugin [Releases](https://github.com/Akari-my/EconomyX)
+1. Download the latest plugin [Releases](https://github.com/Akari-my/EconomyX/releases)
 2. Place the downloaded `EconomyX.phar` file `plugins` folder.
 3. Restart your server
 
