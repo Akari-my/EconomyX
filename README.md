@@ -58,4 +58,7 @@ EconomyAPI::Instance()->setMoney($player, $amount);
 EconomyAPI::Instance()->removeMoney($player, $amount);
 ```
 
+## Bugs??
+Write to me on Discord if you have any bugs or problems with EconomyX
+
 ## Please leave a ⭐ to help the Project!
