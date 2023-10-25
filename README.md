@@ -20,6 +20,42 @@ Command | Description | Permission
 `/setmoney <playerName> <amount>` | Set money to a player | economyx.setmonoey
 `/topmoney` | Check Top Money | economyx.topmoney
 
+## Config.yml
+<details>
+  <summary>Click to open</summary>
+
+```yaml
+---
+#  ______                                     __   __
+# |  ____|                                    \ \ / /
+# | |__   ___ ___  _ __   ___  _ __ ___  _   _ \ V /
+# |  __| / __/ _ \| '_ \ / _ \| '_ ` _ \| | | | > <
+# | |___| (_| (_) | | | | (_) | | | | | | |_| |/ . \
+# |______\___\___/|_| |_|\___/|_| |_| |_|\__, /_/ \_\
+#                                       __/  |
+#                                      |_____/
+#
+# by Akari_my -> support @akari_my on DISCORD
+
+# Please only change things inside the ""
+
+# {player} = Player Name
+# {money} = Money
+messages:
+  is_not_player: "§cThis command can only be used in game"
+  player_not_found: "§cPlayer not found"
+  not_permission: "§cYou do not have permission to use this command"
+  not_enough_money: "§cYou don't have enough money to pay"
+  my_money: "§7You have §e{money} §7money"
+  set_money: "§7You set §e{money} §7to §e{player}"
+  payer_money: "§7You have paid §e{money} §7money to §e{player}"
+  payed_money: "§7You have received §e{money} §7money from §e{player}"
+  see_money: "§e{player} §7has §e{money} §7money"
+  top_money: "§7------ §4TOP MONEY §7------"
+...
+```
+</details>
+
 ## API 💡
 The bees are so simple that it will be fun to make plugins with EconomyX
 
