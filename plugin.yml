@@ -1,0 +1,17 @@
+name: EconomyX
+version: 1.0.0
+description: Simple EconomySystem
+api: 5.0.0
+main: EconomyX\Main
+
+permissions:
+  economyx.mymoney:
+    default: true
+  economyx.pay:
+    default: true
+  economyx.setmoney:
+    default: op
+  economyx.topmoney:
+    default: true
+  economyx.seemoney:
+    default: true
