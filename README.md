@@ -15,7 +15,7 @@ EconomyX is a feature-rich PocketMine plugin that introduces a robust in-game cu
 Command | Description | Permission
 --- | --- | ---
 `/mymoney` |Check Your Money | economyx.mymoney
-`/pay <playerName> <amount>` | Pay a Player | economyx.mymoney
+`/pay <playerName> <amount>` | Pay a Player | economyx.pay
 `/seemoney <playerName>` | Look at another Player's money | economyx.seemoney
 `/setmoney <playerName> <amount>` | Set money to a player | economyx.setmonoey
 `/topmoney` | Check Top Money | economyx.topmoney
