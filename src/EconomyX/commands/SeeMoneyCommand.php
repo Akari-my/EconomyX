@@ -6,8 +6,9 @@ use EconomyX\Main;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
+use pocketmine\plugin\PluginOwned;
 
-class SeeMoneyCommand extends Command {
+class SeeMoneyCommand extends Command implements PluginOwned{
 
     protected Main $plugin;
 
@@ -40,5 +41,9 @@ class SeeMoneyCommand extends Command {
         $message = $this->plugin->getConfig()->get('messages')['see_money'];
         $message = str_replace(["{player}", "{money}"], [$playerName, $money], $message);
         $sender->sendMessage($message);
+    }
+
+    public function getOwningPlugin() : Main {
+        return $this->plugin;
     }
 }

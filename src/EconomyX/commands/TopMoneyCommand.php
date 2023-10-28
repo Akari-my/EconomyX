@@ -2,13 +2,13 @@
 
 namespace EconomyX\commands;
 
-use EconomyX\api\EconomyAPI;
 use EconomyX\Main;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
+use pocketmine\plugin\PluginOwned;
 
-class TopMoneyCommand extends Command {
+class TopMoneyCommand extends Command implements PluginOwned{
 
     protected Main $plugin;
 
@@ -31,5 +31,9 @@ class TopMoneyCommand extends Command {
         foreach ($topMoney as $playerName => $money) {
             $sender->sendMessage("§7{$playerName}: §e{$money}");
         }
+    }
+
+    public function getOwningPlugin() : Main {
+        return $this->plugin;
     }
 }

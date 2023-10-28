@@ -6,8 +6,9 @@ use EconomyX\Main;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
+use pocketmine\plugin\PluginOwned;
 
-class SetMoneyCommand extends Command {
+class SetMoneyCommand extends Command implements PluginOwned{
 
     protected Main $plugin;
 
@@ -45,5 +46,9 @@ class SetMoneyCommand extends Command {
             return true;
         }
         return false;
+    }
+
+    public function getOwningPlugin() : Main {
+        return $this->plugin;
     }
 }
