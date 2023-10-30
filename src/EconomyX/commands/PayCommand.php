@@ -33,19 +33,20 @@ class PayCommand extends Command implements PluginOwned{
             $receiver = $this->plugin->getServer()->getPlayerExact($args[0]);
             $payed = (int)$args[1];
             if($receiver !== null){
-                $result = $this->plugin->EconomyDB()->payMoney($sender, $receiver, $payed);
-                if($result){
-                    $message = $this->plugin->getConfig()->get('messages')['payer_money'];
-                    $message = str_replace(['{money}', '{player}'], [$payed, $args[0]], $message);
-                    $sender->sendMessage($this->plugin->getConfig()->get('prefix') . ' ' . $message);
+                $this->plugin->EconomyDB()->payMoney($sender, $receiver, $payed, function($result) use ($sender, $receiver, $payed, $args) {
+                    if($result){
+                        $message = $this->plugin->getConfig()->get('messages')['payer_money'];
+                        $message = str_replace(['{money}', '{player}'], [$payed, $args[0]], $message);
+                        $sender->sendMessage($this->plugin->getConfig()->get('prefix') . ' ' . $message);
 
-                    $message = $this->plugin->getConfig()->get('messages')['payed_money'];
-                    $message = str_replace(['{money}', '{player}'], [$payed, $sender->getName()], $message);
-                    $receiver->sendMessage($message);
+                        $message = $this->plugin->getConfig()->get('messages')['payed_money'];
+                        $message = str_replace(['{money}', '{player}'], [$payed, $sender->getName()], $message);
+                        $receiver->sendMessage($message);
 
-                } else {
-                    $sender->sendMessage($this->plugin->getConfig()->get('messages')['not_enough_money']);
-                }
+                    } else {
+                        $sender->sendMessage($this->plugin->getConfig()->get('messages')['not_enough_money']);
+                    }
+                });
                 return true;
             }
         }

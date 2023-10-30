@@ -33,9 +33,8 @@ class EconomyAPI {
      * Get the amount of money for a player
      *
      * @param Player $player
-     * @return int
      */
-    public function getMoney(Player $player): int {
+    public function getMoney(Player $player) {
         return $this->database->getMoney($player);
     }
 
@@ -45,8 +44,8 @@ class EconomyAPI {
      * @param Player $player
      * @param int $amount
      */
-    public function addMoney(Player $player, int $amount): void {
-        $this->database->addMoney($player, $amount);
+    public function addMoney(Player $player, int $amount) {
+        return $this->database->addMoney($player, $amount);
     }
 
     /**
@@ -55,8 +54,8 @@ class EconomyAPI {
      * @param Player $player
      * @param int $amount
      */
-    public function setMoney(Player $player, int $amount): void {
-        $this->database->setMoney($player, $amount);
+    public function setMoney(Player $player, int $amount) {
+        return $this->database->setMoney($player, $amount);
     }
 
     /**
@@ -65,7 +64,7 @@ class EconomyAPI {
      * @param Player $player
      * @param int $amount
      */
-    public function removeMoney(Player $player, int $amount): void {
-        $this->database->removeMoney($player, $amount);
+    public function removeMoney(Player $player, int $amount) {
+        return $this->database->removeMoney($player, $amount);
     }
 }

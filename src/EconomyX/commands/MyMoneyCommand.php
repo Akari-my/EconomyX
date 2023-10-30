@@ -18,15 +18,16 @@ class MyMoneyCommand extends Command implements PluginOwned {
         $this->setPermission("economyx.mymoney");
     }
 
-    public function execute(CommandSender $sender, string $commandLabel, array $args) {
+    public function execute(CommandSender $sender, string $commandLabel, array $args): void {
         if(!$sender instanceof Player){
             $sender->sendMessage($this->plugin->getConfig()->get('messages')['is_not_player']);
+        } else {
+            $this->plugin->EconomyDB()->getMoney($sender, function($money) use ($sender) {
+                $message = $this->plugin->getConfig()->get('messages')['my_money'];
+                $message = str_replace('{money}', $money, $message);
+                $sender->sendMessage($message);
+            });
         }
-
-        $money = $this->plugin->EconomyDB()->getMoney($sender);
-        $message = $this->plugin->getConfig()->get('messages')['my_money'];
-        $message = str_replace('{money}', $money, $message);
-        $sender->sendMessage($message);
     }
 
     public function getOwningPlugin() : Main {

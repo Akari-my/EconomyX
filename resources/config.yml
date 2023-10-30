@@ -13,6 +13,12 @@
 
 # {player} = Player Name
 # {money} = Money
+
+database:
+  type: "sqlite"
+  sqlite:
+    file: "sqlite.sql"
+
 messages:
   is_not_player: "§cThis command can only be used in game"
   player_not_found: "§cPlayer not found"

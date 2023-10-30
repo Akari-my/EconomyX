@@ -5,4 +5,5 @@ branches:
 projects:
   EconomyX:
     path: ""
+    icon: "icon.png"
 ...

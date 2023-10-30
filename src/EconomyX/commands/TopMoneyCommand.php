@@ -23,14 +23,14 @@ class TopMoneyCommand extends Command implements PluginOwned{
             $sender->sendMessage($this->plugin->getConfig()->get('messages')['is_not_player']);
         }
 
-        $topMoney = $this->plugin->EconomyDB()->getTopMoney();
+        $this->plugin->EconomyDB()->getTopMoney(function($topMoney) use ($sender) {
+            $message = $this->plugin->getConfig()->get('messages')['top_money'];
+            $sender->sendMessage($message);
 
-        $message = $this->plugin->getConfig()->get('messages')['top_money'];
-        $sender->sendMessage($message);
-
-        foreach ($topMoney as $playerName => $money) {
-            $sender->sendMessage("§7{$playerName}: §e{$money}");
-        }
+            foreach ($topMoney as $playerName => $money) {
+                $sender->sendMessage("§7{$playerName}: §e{$money}");
+            }
+        });
     }
 
     public function getOwningPlugin() : Main {

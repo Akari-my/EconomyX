@@ -19,12 +19,12 @@ class SeeMoneyCommand extends Command implements PluginOwned{
     }
 
     public function execute(CommandSender $sender, string $commandLabel, array $args) {
-        if(!$sender instanceof Player){
+        if(!$sender instanceof Player) {
             $sender->sendMessage($this->plugin->getConfig()->get('messages')['is_not_player']);
             return false;
         }
 
-        if (!isset($args[0])) {
+        if(!isset($args[0])) {
             $sender->sendMessage("§cUsage: /seemoney <player>");
             return false;
         }
@@ -37,10 +37,11 @@ class SeeMoneyCommand extends Command implements PluginOwned{
             return false;
         }
 
-        $money = $this->plugin->EconomyDB()->getMoney($player);
-        $message = $this->plugin->getConfig()->get('messages')['see_money'];
-        $message = str_replace(["{player}", "{money}"], [$playerName, $money], $message);
-        $sender->sendMessage($message);
+        $this->plugin->EconomyDB()->getMoney($player, function($money) use ($sender, $playerName) {
+            $message = $this->plugin->getConfig()->get('messages')['see_money'];
+            $message = str_replace(["{player}", "{money}"], [$playerName, $money], $message);
+            $sender->sendMessage($message);
+        });
     }
 
     public function getOwningPlugin() : Main {

@@ -8,8 +8,12 @@ EconomyX is a feature-rich PocketMine plugin that introduces a robust in-game cu
 
 ## Installation :pencil:
 1. Download the latest plugin [Releases](https://github.com/Akari-my/EconomyX/releases)
-2. Place the downloaded `EconomyX.phar` file `plugins` folder.
-3. Restart your server
+2. Download the DEVirion [Download](https://github.com/poggit/devirion/tree/pm5)
+3. Download the libasynql [Download](https://github.com/poggit/libasynql)
+4. Place the downloaded `EconomyX.phar` file `plugins` folder.
+5. Place the downloaded `DEVirion` file `plugins` folder.
+6. Place the downloaded `libasynql` file `virions` folder.
+7. Restart your server
 
 ## Commands :spades:
 Command | Description | Permission
