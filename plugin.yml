@@ -3,7 +3,7 @@ version: 1.0.0
 description: Simple EconomySystem
 api: 5.0.0
 main: EconomyX\Main
-
+load: STARTUP
 permissions:
   economyx.mymoney:
     default: true

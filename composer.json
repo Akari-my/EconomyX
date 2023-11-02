@@ -1,0 +1,26 @@
+{
+  "name": "akari_my/economyx",
+  "license": "MIT",
+  "type": "pocketmine-plugin",
+  "scripts": {
+    "analyze": "vendor/bin/phpstan analyze src",
+    "build": "php -dphar.readonly=0 vendor/bin/pharynx -i=. -c -p=EconomyX.phar"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/poggit/libasynql"
+    }
+  ],
+  "require": {
+    "sof3/libasynql": "4.2.2",
+    "pocketmine/pocketmine-mp": "5.7.0"
+  },
+  "require-dev": {
+    "sof3/pharynx": "^0.3.0",
+    "phpstan/phpstan": "^1.2"
+  },
+  "autoload": {
+    "classmap": ["src"]
+  }
+}
