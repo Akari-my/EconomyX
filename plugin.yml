@@ -1,3 +1,4 @@
+---
 name: EconomyX
 version: 1.0.0
 description: Simple EconomySystem
@@ -15,3 +16,4 @@ permissions:
     default: true
   economyx.seemoney:
     default: true
+...

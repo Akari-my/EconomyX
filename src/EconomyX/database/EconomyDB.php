@@ -3,7 +3,7 @@
 namespace EconomyX\database;
 
 use pocketmine\player\Player;
-use poggit\libasynql\DataConnector;
+use _7aa34c74ea11067a2510poggit\libasynql\DataConnector;
 
 class EconomyDB {
 

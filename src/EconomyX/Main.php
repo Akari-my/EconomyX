@@ -11,8 +11,8 @@ use EconomyX\commands\TopMoneyCommand;
 use EconomyX\database\EconomyDB;
 use EconomyX\managers\PlayerManager;
 use pocketmine\plugin\PluginBase;
-use poggit\libasynql\DataConnector;
-use poggit\libasynql\libasynql;
+use _7aa34c74ea11067a2510poggit\libasynql\DataConnector;
+use _7aa34c74ea11067a2510poggit\libasynql\libasynql;
 
 class Main extends PluginBase {
 
